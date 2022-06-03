@@ -6,10 +6,9 @@ services:
     restart: unless-stopped
     ports:
       # These ports are in format <host-port>:<container-port>
-      - "80:81" # Public HTTP Port
+      - "80:80" # Public HTTP Port
       - "443:443" # Public HTTPS Port
-      # Admin Web Port
-    network_mode: "host"
+      - "81:81" # Admin Web Port
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
